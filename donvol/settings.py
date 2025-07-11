@@ -29,7 +29,8 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "unsafe-dev-key")
 DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 #ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['donify-django.onrender.com']
+ALLOWED_HOSTS = ['donify-project.onrender.com']
+
 
 
 # Application definition
