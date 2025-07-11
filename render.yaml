@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: donify-django
+    env: python
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --no-input
+      python manage.py migrate
+    startCommand: gunicorn donvol.wsgi:application
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        value: "django-insecure-qg#kuysx+&cm)jp#hv(j%uuel2jcp4*7u5@1zm79za=r+%)$0r"
+      - key: DEBUG
+        value: "false"
+      - key: ALLOWED_HOSTS
+        value: "donify-django.onrender.com"
